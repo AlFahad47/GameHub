@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../components/Banner";
 import { useLoaderData } from "react-router";
 import GameCard from "../components/GameCard";
+import gameLogo from "../assets/gamelogo.png"
 
 const Home = () => {
   const data = useLoaderData();
@@ -16,6 +17,13 @@ const Home = () => {
           .map((game) => (
             <GameCard game={game}></GameCard>
           ))}
+      </div>
+      {/* new letter section */}
+      <div className="flex lg:flex-row flex-col justify-between items-center lg:w-9/12 w-11/12 mx-auto mt-10">
+        <img className="lg:max-h-[550px] md:max-h-[400px] max-h-[250px] mb-5" src={gameLogo} alt="" />
+        <div className=""><h2 className="font-bold text-3xl mb-2">Sign up for newletter</h2>
+        <p>Join our mailing list to get quick updates...</p>
+        <form className="flex gap-3 mt-10 " action=""><input className="input" type="text" /><button className="btn btn-primary bg-red-500">Subscribe</button></form></div>
       </div>
     </div>
   );
