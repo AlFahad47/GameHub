@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "title": "Player Unknowns Battle Ground: PUBG",
+    "coverPhoto": "https://i.ibb.co/NnYKNzTq/PUBG.webp",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://i.ibb.co/39gGL4BV/Genshin.webp",
+    "category": "Action RPG",
+    "downloadLink": "https://genshin.hoyoverse.com/en/",
+    "description": "Explore Teyvat, a vast fantasy world teeming with life, where seven gods rule over seven elements. Embark on a journey to find your lost sibling.",
+    "ratings": "4.7",
+    "developer": "HoYoverse"
+  },
+  {
+    "id": "3",
+    "title": "Call of Duty: Mobile",
+    "coverPhoto": "https://i.ibb.co/3Y0tX0RB/call.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "Experience the thrill of Call of Duty on the go, featuring iconic maps, modes, weapons, and characters from across the franchise.",
+    "ratings": "4.6",
+    "developer": "TiMi Studio Group"
+  },
+  {
+    "id": "4",
+    "title": "Among Us",
+    "coverPhoto": "https://i.ibb.co/8njKJHLp/Among.jpg",
+    "category": "Social Deduction",
+    "downloadLink": "https://www.innersloth.com/games/among-us/",
+    "description": "A game of teamwork and betrayal. Crewmates work together to complete tasks while impostors try to eliminate them.",
+    "ratings": "4.3",
+    "developer": "Innersloth"
+  },
+  {
+    "id": "5",
+    "title": "Minecraft",
+    "coverPhoto": "https://i.ibb.co/x82Q8H3g/Minecraft.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/en-us/download",
+    "description": "A game about placing blocks and going on adventures. Explore randomly generated worlds and build amazing things.",
+    "ratings": "4.8",
+    "developer": "Mojang Studios"
+  },
+  {
+    "id": "6",
+    "title": "Apex Legends Mobile",
+    "coverPhoto": "https://i.ibb.co/V092PCDz/apex.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.ea.com/games/apex-legends/apex-legends-mobile",
+    "description": "A strategic battle royale game featuring legendary character-based gameplay, best-in-class squad battles, and fast-paced combat.",
+    "ratings": "4.4",
+    "developer": "Respawn Entertainment"
+  },
+  {
+    "id": "7",
+    "title": "Clash of Clans",
+    "coverPhoto": "https://i.ibb.co/wZf287rG/clash.webp",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashofclans/",
+    "description": "Build your village, raise a clan, and compete in epic Clan Wars. A classic mobile strategy game with millions of players.",
+    "ratings": "4.5",
+    "developer": "Supercell"
+  },
+  {
+    "id": "8",
+    "title": "Fortnite",
+    "coverPhoto": "https://i.ibb.co/PsFBzymR/Fortnite.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.fortnite.com/",
+    "description": "A massive 100-player PvP battle royale with a unique building mechanic. Drop in, loot up, and be the last one standing.",
+    "ratings": "4.4",
+    "developer": "Epic Games"
+  },
+  {
+    "id": "9",
+    "title": "Asphalt 9: Legends",
+    "coverPhoto": "https://i.ibb.co/FbgLJSs3/asphalt.jpg",
+    "category": "Racing",
+    "downloadLink": "https://www.gameloft.com/game/asphalt-9",
+    "description": "Get in gear and take on the world's best, most fearless street car racers. Features a top roster of real hypercars.",
+    "ratings": "4.6",
+    "developer": "Gameloft Barcelona"
+  },
+  {
+    "id": "10",
+    "title": "Hearthstone",
+    "coverPhoto": "https://i.ibb.co/6cTtcT90/Hearthstone.png",
+    "category": "Collectible Card Game",
+    "downloadLink": "https://playhearthstone.com/en-us/",
+    "description": "A fast-paced strategy card game from Blizzard Entertainment. Slin' spells, summon minions, and seize control of the battlefield.",
+    "ratings": "4.2",
+    "developer": "Blizzard Entertainment"
+  },
+  {
+    "id": "11",
+    "title": "League of Legends: Wild Rift",
+    "coverPhoto": "https://i.ibb.co/nsTPwXtj/league.jpg",
+    "category": "MOBA",
+    "downloadLink": "https://wildrift.leagueoflegends.com/en-us/",
+    "description": "The skills-and-strategy 5v5 MOBA experience of League of Legends, now built from the ground up for mobile.",
+    "ratings": "4.3",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "12",
+    "title": "Stardew Valley",
+    "coverPhoto": "https://i.ibb.co/R4QxckCT/Stardew.png",
+    "category": "Farming Sim",
+    "downloadLink": "https://www.stardewvalley.net/",
+    "description": "You've inherited your grandfather's old farm plot. Armed with tools and a few coins, you set out to begin your new life.",
+    "ratings": "4.9",
+    "developer": "ConcernedApe"
+  }
+]
