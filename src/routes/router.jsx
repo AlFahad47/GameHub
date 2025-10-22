@@ -10,6 +10,7 @@ import UpdateProfile from "../pages/UpdateProfile";
 import About from "../pages/About";
 import ForgetPassword from "../pages/ForgetPassword";
 import PageNotFound from "../pages/PageNotFound";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home />, loader: () => fetch("/games.json") },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
-      { path: "/game/:id", element: <GameDetails />, loader: () => fetch("/games.json")  },
+      { path: "/game/:id", element:<PrivateRoute><GameDetails /></PrivateRoute> , loader: () => fetch("/games.json")  },
       { path: "/all", element: <AllGames />,loader: () => fetch("/games.json") },
       { path: "/profile", element: <MyProfile /> },
       { path: "/update", element: <UpdateProfile /> },

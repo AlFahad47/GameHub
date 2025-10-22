@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import loginImg from "../assets/login.png";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 
 const Register = () => {
- const  {createUserWithEmailAndPasswordFunc,updateProfileFunc,sendEmailVerificationFunc,signoutUserFunc,setUser,setLoading} = useContext(AuthContext)
+ const  {createUserWithEmailAndPasswordFunc,updateProfileFunc,sendEmailVerificationFunc,signoutUserFunc,setUser,setLoading,signInWithGoogleFunc} = useContext(AuthContext)
     const navigate = useNavigate();
+    const location = useLocation();
+  const from = location.state || "/";
 
  const handleSubmit =(e)=>{
     e.preventDefault();
@@ -71,7 +73,21 @@ const Register = () => {
       });
   };
 
-  
+   const handleGoogleSignin = () => {
+      console.log("google signin");
+      signInWithGoogleFunc()
+        .then((res) => {
+          console.log(res);
+          setLoading(false);
+          setUser(res.user);
+          navigate(from);
+          toast.success("Signin successful");
+        })
+        .catch((e) => {
+          console.log(e);
+          toast.error(e.message);
+        });
+    };
   return (
     <div className="flex flex-row-reverse m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
       <div className="flex-1">
@@ -97,7 +113,7 @@ const Register = () => {
 
           <button className="btn btn-neutral mt-4 w-full mb-2.5">Register</button>
 
-          <button type="button" className="btn bg-white text-black border-[#e5e5e5]">
+          <button onClick={handleGoogleSignin} type="button" className="btn bg-white text-black border-[#e5e5e5]">
             <svg
               aria-label="Google logo"
               width="16"
