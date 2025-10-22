@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
       { path: "/game/:id", element: <GameDetails />, loader: () => fetch("/games.json")  },
-      { path: "/all", element: <AllGames /> },
+      { path: "/all", element: <AllGames />,loader: () => fetch("/games.json") },
       { path: "/profile", element: <MyProfile /> },
       { path: "/update", element: <UpdateProfile /> },
       { path: "/about", element: <About /> },
