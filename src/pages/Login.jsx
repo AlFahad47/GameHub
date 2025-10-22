@@ -1,5 +1,6 @@
 import React from "react";
 import loginImg from "../assets/login.png";
+import { Link } from "react-router";
 
 const Login = () => {
   return (
@@ -51,6 +52,8 @@ const Login = () => {
             Login with Google
           </button>
         </form>
+        <p>New to our website? Please <Link className='text-blue-500 hover:text-blue-800 pt-10' to="/register">Register</Link> </p>
+
       </div>
       <div className="lg:flex-1 md:flex-1 ">
         <img

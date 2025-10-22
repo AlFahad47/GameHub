@@ -14,9 +14,6 @@ const Navbar = () => {
         <NavLink to="/about">About</NavLink>
       </li>
       <li>
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li>
         <NavLink to="/register">Register</NavLink>
       </li>
     </>
@@ -54,7 +51,7 @@ const Navbar = () => {
 
       <div className="navbar-end">
         <ul className="menu menu-horizontal px-1 hidden lg:flex">{navLinks}</ul>
-        <a className="btn">Button</a>
+         <NavLink to="/login" className=" py-2 rounded-sm px-7 bg-red-600 border-red-950 " >Login</NavLink>
       </div>
     </div>
   );
