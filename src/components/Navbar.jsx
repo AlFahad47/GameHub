@@ -79,14 +79,14 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 hidden lg:flex">{navLinks}</ul>
       {user ? (
           <div className="flex justify-between items-center text-center gap-4">
-            <button
+            <Link to="/profile"
             >
               <img
                 src={user?.photoURL || avaterImg}
                 className="h-[40px] w-[40px] rounded-full mx-auto"
                 alt=""
               />
-            </button>
+            </Link>
 
             
               
