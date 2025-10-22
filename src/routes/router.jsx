@@ -24,8 +24,9 @@ export const router = createBrowserRouter([
       { path: "/profile", element: <MyProfile /> },
       { path: "/update", element: <UpdateProfile /> },
       { path: "/about", element: <About /> },
+      { path: "/forget-password", element: <ForgetPassword /> },
     ],
   },
-  { path: "/forget-password", element: <ForgetPassword /> },
+  
   { path: "*", element: <PageNotFound /> },
 ]);

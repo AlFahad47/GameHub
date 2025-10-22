@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import loginImg from "../assets/login.png";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, Links, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { AuthContext } from "../provider/AuthContext";
 
@@ -11,6 +11,8 @@ const Login = () => {
   const from = location.state || "/";
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState("")
+console.log(email)
 
    const handleLogin = (e) => {
     e.preventDefault();
@@ -59,7 +61,7 @@ const Login = () => {
       <div className="flex-1">
         <form onSubmit={handleLogin} className="fieldset">
           <label className="label">Email</label>
-          <input name="email" type="email" className="input w-full" placeholder="Email" />
+          <input onChange={e=>setEmail(e.target.value)}  name="email" type="email" className="input w-full" placeholder="Email" />
           <label className="label">Password</label>
           <input
             name="password"
@@ -68,7 +70,7 @@ const Login = () => {
             placeholder="Password"
           />
           <div>
-            <a className="link link-hover">Forgot password?</a>
+            <Link to="/forget-password" state={email} className="link link-hover">Forgot password?</Link>
           </div>
 
           <button className="btn btn-neutral mt-4 w-full mb-2.5">Login</button>

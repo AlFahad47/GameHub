@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { auth } from "../firebase/firebase.config";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
@@ -40,6 +40,11 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+   const sendPassResetEmailFunc = (email) => {
+    console.log("email from auth forget pass word",email)
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
+  };
   const authInfo = {
     user,
     setUser,
@@ -50,7 +55,8 @@ const AuthProvider = ({ children }) => {
     sendEmailVerificationFunc,
     signoutUserFunc,
     signInWithEmailAndPasswordFunc,
-    signInWithGoogleFunc
+    signInWithGoogleFunc,
+    sendPassResetEmailFunc
   };
   return <AuthContext value={authInfo}>{children}</AuthContext>;
 };
