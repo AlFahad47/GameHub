@@ -23,6 +23,17 @@ const Register = () => {
     });
 
 
+      const regExp =/(?=.*[A-Z])(?=.*[a-z]).{6,}/;
+
+   
+
+    if (!regExp.test(password)) {
+      toast.error(
+        "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long."
+      );
+      return;
+    }
+
      createUserWithEmailAndPasswordFunc(email, password)
       .then((res) => {
         // 2nd step: Update profile
@@ -45,18 +56,18 @@ const Register = () => {
                 });
               })
               .catch((e) => {
-                console.log(e);
+                console.log(e.message);
                 toast.error(e.message);
               });
           })
           .catch((e) => {
-            console.log(e);
+            console.log(e.message);
             toast.error(e.message);
           });
       })
       .catch((e) => {
-        console.log(e);
-        console.log(e.code);
+        console.log(e.message);
+        console.log(e.message);
       });
   };
 
