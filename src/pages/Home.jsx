@@ -15,7 +15,7 @@ const Home = () => {
           .sort((a, b) => parseFloat(b.ratings) - parseFloat(a.ratings))
           .slice(0, 3)
           .map((game) => (
-            <GameCard game={game}></GameCard>
+            <GameCard key={game.id} game={game}></GameCard>
           ))}
       </div>
       {/* new letter section */}

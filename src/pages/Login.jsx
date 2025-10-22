@@ -1,16 +1,68 @@
-import React from "react";
+import React, { useContext } from "react";
 import loginImg from "../assets/login.png";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { AuthContext } from "../provider/AuthContext";
 
 const Login = () => {
+
+ const {signInWithEmailAndPasswordFunc,setUser,setLoading,signInWithGoogleFunc} = useContext(AuthContext)
+  const location = useLocation();
+  const from = location.state || "/";
+  const navigate = useNavigate();
+
+
+   const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email?.value;
+    const password = e.target.password?.value;
+    console.log({ email, password });
+    signInWithEmailAndPasswordFunc(email, password)
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+
+        if (!res.user?.emailVerified) {
+          toast.error("Your email is not verified.");
+          
+          return;
+        }
+        setUser(res.user);
+        toast.success("Signin successful");
+        navigate(from);
+      })
+      .catch((e) => {
+        console.log(e);
+        toast.error(e.message);
+      });
+  };
+
+  const handleGoogleSignin = () => {
+    console.log("google signin");
+    signInWithGoogleFunc()
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+        setUser(res.user);
+        navigate(from);
+        toast.success("Signin successful");
+      })
+      .catch((e) => {
+        console.log(e);
+        toast.error(e.message);
+      });
+  };
+
   return (
+    
     <div className="flex m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
       <div className="flex-1">
-        <form className="fieldset">
+        <form onSubmit={handleLogin} className="fieldset">
           <label className="label">Email</label>
-          <input type="email" className="input w-full" placeholder="Email" />
+          <input name="email" type="email" className="input w-full" placeholder="Email" />
           <label className="label">Password</label>
           <input
+            name="password"
             type="password"
             className="input w-full"
             placeholder="Password"
@@ -21,7 +73,7 @@ const Login = () => {
 
           <button className="btn btn-neutral mt-4 w-full mb-2.5">Login</button>
 
-          <button class="btn bg-white text-black border-[#e5e5e5]">
+          <button type="button" onClick={handleGoogleSignin} className="btn bg-white text-black border-[#e5e5e5]">
             <svg
               aria-label="Google logo"
               width="16"
