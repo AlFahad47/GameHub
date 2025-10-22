@@ -8,3 +8,7 @@ themes: light --default;
   font-family: "Inter", sans-serif;
   
 }
+
+html{
+  background-color: #262626;
+}

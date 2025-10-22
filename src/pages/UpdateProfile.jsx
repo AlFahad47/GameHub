@@ -53,7 +53,7 @@ const UpdateProfile = () => {
             placeholder="photo URL"
           />
           <button className="btn btn-neutral bg-red-600 mt-4 w-full mb-2.5">
-            Update
+            Update Information
           </button>
           <div>
             <Link to="/login" className="link link-hover">
