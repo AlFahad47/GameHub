@@ -97,41 +97,117 @@ const Register = () => {
       });
   };
   return (
-    <div className="flex flex-row-reverse m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32 text-white">
+    <div className="text-white flex  lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between  ">
       <div className="flex-1">
-        <form onSubmit={handleSubmit} className="fieldset">
-          <label className="label">Name</label>
-          <input
-            type="text"
-            name="name"
-            className="input w-full text-black"
-            placeholder="Name"
-            required
-          />
+        <div className="text-center md:mt-auto mt-10">
+          <h2 className="text-2xl font-bold">REGISTRATION</h2>
+          <p></p>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="fieldset md:w-7/12 mx-auto max-w-[320px]"
+        >
+          <label className="input validator min-h-[52px] mb-4">
+            <svg
+              className="h-[1em] opacity-50 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              </g>
+            </svg>
+            <input
+              name="name"
+              type="text"
+              className="  text-black"
+              placeholder="Name"
+            />
+          </label>
 
-          <label className="label">Photo</label>
-          <input
-            type="text"
-            name="photo"
-            className="input w-full text-black"
-            placeholder="Photo URL"
-            required
-          />
+          <label className="input validator min-h-[52px] mb-4">
+            <svg
+              className="h-[1em] opacity-50 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </g>
+            </svg>
+            <input
+              type="url"
+              required
+              name="photo"
+              placeholder="Photo URL"
+              className="  text-black"
+              title="Must be valid URL"
+            />
+          </label>
 
-          <label className="label">Email</label>
-          <input
-            type="email"
-            name="email"
-            className="input w-full text-black"
-            placeholder="Email"
-          />
-          <label className="label">Password</label>
-          <input
-            type="password"
-            name="password"
-            className="input w-full text-black"
-            placeholder="Password"
-          />
+          <label className="input validator min-h-[52px] mb-4">
+            <svg
+              className="h-[1em] opacity-50 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </g>
+            </svg>
+            <input
+              name="email"
+              type="email"
+              className="  text-black"
+              placeholder="Email"
+            />
+          </label>
+          <label className="input validator min-h-[52px]">
+            <svg
+              className="h-[1em] opacity-50 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path>
+                <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              </g>
+            </svg>
+
+            <input
+              name="password"
+              type="password"
+              className=" w-full text-black"
+              placeholder="Password"
+            />
+          </label>
           <div>
             <a className="link link-hover">Forgot password?</a>
           </div>
@@ -175,7 +251,7 @@ const Register = () => {
             Login with Google
           </button>
         </form>
-        <p className="text-sm mt-2.5">
+        <p className="pt-4 md:w-7/12 md:mb-auto mb-10 max-w-[320px]  mx-auto">
           Already have an account?{" "}
           <Link
             to="/login"
@@ -185,12 +261,8 @@ const Register = () => {
           </Link>
         </p>
       </div>
-      <div className="lg:flex-1 md:flex-1 ">
-        <img
-          className="rounded-[40px] lg:flex md:flex hidden"
-          src={loginImg}
-          alt=""
-        />
+      <div className="lg:flex-1 md:flex-1 bg-red-600 p-10 md:py-30 lg:py-10 lg:flex md:flex hidden">
+        <img className="rounded-[40px]  " src={loginImg} alt="" />
       </div>
     </div>
   );
