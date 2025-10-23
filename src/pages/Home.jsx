@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <h2 className="mt-10 font-bold text-xl md:text-2xl lg:text-4xl text-center">
+      <h2 className="mt-10 font-bold text-xl md:text-2xl lg:text-4xl text-center text-white/90">
         Popular Games
       </h2>
       <motion.div
