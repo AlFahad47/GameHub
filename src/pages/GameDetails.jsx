@@ -15,20 +15,29 @@ const GameDetails = () => {
     setGame(filteredGame);
   }, []);
   return (
-    <div className="flex lg:flex-row flex-col-reverse  justify-between items-center w-11/12 mx-auto mt-10 text-white">
+    <div className="flex lg:flex-row flex-col-reverse lg:my-30 justify-between items-center w-11/12 mx-auto mt-10 text-white">
       <div className="flex-1 ">
-        <h2 className="font-bold text-4xl mb-9">{game.title}</h2>
+        <h2 className="font-bold text-4xl mb-7">{game.title}</h2>
+        <hr class=" border-white my-5" />
+
         <p className="mb-2.5">{game.description}</p>
+
         <div>
           <h2 className="mb-2.5">
-            developer:{" "}
-            <span className="font-semibold italic">{game.developer}</span>
+            Developed by{" "}
+            <span className="font-semibold italic text-red-500">
+              {game.developer}
+            </span>
           </h2>
+          <hr class=" border-white my-5" />
           <p>Category: {game.category}</p>
         </div>
         <div className="flex items-center justify-between mb-5">
           <h2>{game.ratings}</h2>
-          <a href={game.downloadLink} className="btn btn-primary bg-red-600">
+          <a
+            href={game.downloadLink}
+            className="bg-red-700 text-white px-4 py-2 rounded-md font-semibold cursor-pointer"
+          >
             Download
           </a>
         </div>
