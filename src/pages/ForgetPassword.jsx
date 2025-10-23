@@ -2,12 +2,15 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
+import { useTitle } from "../hooks/useTitle";
 
 const ForgetPassword = () => {
   const { sendPassResetEmailFunc, setLoading } = useContext(AuthContext);
   const location = useLocation();
   console.log(location);
   const [email, setEmail] = useState(location?.state || "");
+
+  useTitle("Password Reset | GameHub");
 
   const handleReset = (e) => {
     e.preventDefault();

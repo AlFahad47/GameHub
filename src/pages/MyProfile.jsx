@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
+import { useTitle } from "../hooks/useTitle";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
+  useTitle("My Profile | GameHub");
   return (
     <div className="flex justify-center items-center   min-h-screen ">
       <div className="fieldset  px-20 py-10 w-[570px] bg-red-200 rounded-2xl">
@@ -25,7 +27,10 @@ const MyProfile = () => {
           </div>
         </div>
 
-        <Link to="/update" className="btn btn-neutral bg-red-600 mt-4 w-full mb-2.5">
+        <Link
+          to="/update"
+          className="btn btn-neutral bg-red-600 mt-4 w-full mb-2.5"
+        >
           Update
         </Link>
         <div>

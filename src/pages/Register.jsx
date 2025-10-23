@@ -3,31 +3,39 @@ import { Link, useLocation, useNavigate } from "react-router";
 import loginImg from "../assets/login.png";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
+import { useTitle } from "../hooks/useTitle";
 
 const Register = () => {
- const  {createUserWithEmailAndPasswordFunc,updateProfileFunc,sendEmailVerificationFunc,signoutUserFunc,setUser,setLoading,signInWithGoogleFunc} = useContext(AuthContext)
-    const navigate = useNavigate();
-    const location = useLocation();
+  const {
+    createUserWithEmailAndPasswordFunc,
+    updateProfileFunc,
+    sendEmailVerificationFunc,
+    signoutUserFunc,
+    setUser,
+    setLoading,
+    signInWithGoogleFunc,
+  } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
   const from = location.state || "/";
 
- const handleSubmit =(e)=>{
+  useTitle("Registration | GameHub");
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-      const displayName = e.target.name?.value;
+    const displayName = e.target.name?.value;
     const photoURL = e.target.photo?.value;
     const email = e.target.email?.value;
     const password = e.target.password?.value;
 
-      console.log("signup function entered", {
+    console.log("signup function entered", {
       email,
       displayName,
       photoURL,
       password,
     });
 
-
-      const regExp =/(?=.*[A-Z])(?=.*[a-z]).{6,}/;
-
-   
+    const regExp = /(?=.*[A-Z])(?=.*[a-z]).{6,}/;
 
     if (!regExp.test(password)) {
       toast.error(
@@ -36,7 +44,7 @@ const Register = () => {
       return;
     }
 
-     createUserWithEmailAndPasswordFunc(email, password)
+    createUserWithEmailAndPasswordFunc(email, password)
       .then((res) => {
         // 2nd step: Update profile
         updateProfileFunc(displayName, photoURL)
@@ -73,33 +81,48 @@ const Register = () => {
       });
   };
 
-   const handleGoogleSignin = () => {
-      console.log("google signin");
-      signInWithGoogleFunc()
-        .then((res) => {
-          console.log(res);
-          setLoading(false);
-          setUser(res.user);
-          navigate(from);
-          toast.success("Signin successful");
-        })
-        .catch((e) => {
-          console.log(e);
-          toast.error(e.message);
-        });
-    };
+  const handleGoogleSignin = () => {
+    console.log("google signin");
+    signInWithGoogleFunc()
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+        setUser(res.user);
+        navigate(from);
+        toast.success("Signin successful");
+      })
+      .catch((e) => {
+        console.log(e);
+        toast.error(e.message);
+      });
+  };
   return (
     <div className="flex flex-row-reverse m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
       <div className="flex-1">
         <form onSubmit={handleSubmit} className="fieldset">
           <label className="label">Name</label>
-          <input type="text" name="name" className="input w-full" placeholder="Name" />
+          <input
+            type="text"
+            name="name"
+            className="input w-full"
+            placeholder="Name"
+          />
 
           <label className="label">Photo</label>
-          <input type="text" name="photo" className="input w-full" placeholder="Photo URL" />
+          <input
+            type="text"
+            name="photo"
+            className="input w-full"
+            placeholder="Photo URL"
+          />
 
           <label className="label">Email</label>
-          <input type="email" name="email" className="input w-full" placeholder="Email" />
+          <input
+            type="email"
+            name="email"
+            className="input w-full"
+            placeholder="Email"
+          />
           <label className="label">Password</label>
           <input
             type="password"
@@ -111,9 +134,15 @@ const Register = () => {
             <a className="link link-hover">Forgot password?</a>
           </div>
 
-          <button className="btn btn-neutral mt-4 w-full mb-2.5">Register</button>
+          <button className="btn btn-neutral mt-4 w-full mb-2.5">
+            Register
+          </button>
 
-          <button onClick={handleGoogleSignin} type="button" className="btn bg-white text-black border-[#e5e5e5]">
+          <button
+            onClick={handleGoogleSignin}
+            type="button"
+            className="btn bg-white text-black border-[#e5e5e5]"
+          >
             <svg
               aria-label="Google logo"
               width="16"

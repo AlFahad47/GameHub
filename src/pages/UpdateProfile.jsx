@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
+import { useTitle } from "../hooks/useTitle";
 
 const UpdateProfile = () => {
   const { updateProfileFunc, setUser, user } = useContext(AuthContext);
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
+  useTitle("Update Profile | GameHub");
 
   const handleUpadte = (e) => {
     e.preventDefault();

@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
+import { useTitle } from "../hooks/useTitle";
 
 const PageNotFound = () => {
-  return (
-    <div>
-      404 page not found
-    </div>
-  )
-}
+  useTitle("Page not Found | GameHub");
 
-export default PageNotFound
+  return <div>404 page not found</div>;
+};
+
+export default PageNotFound;

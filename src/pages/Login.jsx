@@ -3,18 +3,24 @@ import loginImg from "../assets/login.png";
 import { Link, Links, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { AuthContext } from "../provider/AuthContext";
+import { useTitle } from "../hooks/useTitle";
 
 const Login = () => {
-
- const {signInWithEmailAndPasswordFunc,setUser,setLoading,signInWithGoogleFunc} = useContext(AuthContext)
+  const {
+    signInWithEmailAndPasswordFunc,
+    setUser,
+    setLoading,
+    signInWithGoogleFunc,
+  } = useContext(AuthContext);
   const location = useLocation();
   const from = location.state || "/";
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("")
-console.log(email)
+  const [email, setEmail] = useState("");
 
-   const handleLogin = (e) => {
+  useTitle("Login | GameHub");
+
+  const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email?.value;
     const password = e.target.password?.value;
@@ -26,7 +32,7 @@ console.log(email)
 
         if (!res.user?.emailVerified) {
           toast.error("Your email is not verified.");
-          
+
           return;
         }
         setUser(res.user);
@@ -56,12 +62,17 @@ console.log(email)
   };
 
   return (
-    
     <div className="flex m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
       <div className="flex-1">
         <form onSubmit={handleLogin} className="fieldset">
           <label className="label">Email</label>
-          <input onChange={e=>setEmail(e.target.value)}  name="email" type="email" className="input w-full" placeholder="Email" />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            type="email"
+            className="input w-full"
+            placeholder="Email"
+          />
           <label className="label">Password</label>
           <input
             name="password"
@@ -70,12 +81,22 @@ console.log(email)
             placeholder="Password"
           />
           <div>
-            <Link to="/forget-password" state={email} className="link link-hover">Forgot password?</Link>
+            <Link
+              to="/forget-password"
+              state={email}
+              className="link link-hover"
+            >
+              Forgot password?
+            </Link>
           </div>
 
           <button className="btn btn-neutral mt-4 w-full mb-2.5">Login</button>
 
-          <button type="button" onClick={handleGoogleSignin} className="btn bg-white text-black border-[#e5e5e5]">
+          <button
+            type="button"
+            onClick={handleGoogleSignin}
+            className="btn bg-white text-black border-[#e5e5e5]"
+          >
             <svg
               aria-label="Google logo"
               width="16"
@@ -106,8 +127,15 @@ console.log(email)
             Login with Google
           </button>
         </form>
-        <p>New to our website? Please <Link className='text-blue-500 hover:text-blue-800 pt-10' to="/register">Register</Link> </p>
-
+        <p>
+          New to our website? Please{" "}
+          <Link
+            className="text-blue-500 hover:text-blue-800 pt-10"
+            to="/register"
+          >
+            Register
+          </Link>{" "}
+        </p>
       </div>
       <div className="lg:flex-1 md:flex-1 ">
         <img
