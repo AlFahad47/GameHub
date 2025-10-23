@@ -7,7 +7,7 @@ const AllGames = () => {
   const data = useLoaderData();
   useTitle("All Games | GameHub");
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 my-10 justify-items-center">
+    <div className="grid lg:grid-cols-4 md:grid-cols-2  gap-x-10 gap-y-10 my-10 justify-items-center max-w-[1440px] mx-auto">
       {data.map((game) => (
         <GameCard game={game}></GameCard>
       ))}

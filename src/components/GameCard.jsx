@@ -9,11 +9,11 @@ const GameCard = ({ game }) => {
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1 }}
-        className="w-[370px] max-h-[550px] bg-[#AD2B2B] rounded-md flex flex-col justify-between cursor-pointer "
+        className="w-[340px]  max-h-[550px] bg-[#AD2B2B] rounded-md flex flex-col justify-between cursor-pointer "
       >
         <div>
           <img
-            className="rounded-t-md h-[420px] object-cover"
+            className="rounded-t-md h-[420px] object-cover w-full"
             src={game.coverPhoto}
             alt=""
           />
