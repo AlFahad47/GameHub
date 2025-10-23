@@ -62,24 +62,67 @@ const Login = () => {
   };
 
   return (
-    <div className="text-white flex m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
-      <div className="flex-1">
-        <form onSubmit={handleLogin} className="fieldset">
-          <label className="label">Email</label>
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-            type="email"
-            className="input w-full text-black"
-            placeholder="Email"
-          />
-          <label className="label">Password</label>
-          <input
-            name="password"
-            type="password"
-            className="input w-full text-black"
-            placeholder="Password"
-          />
+    <div className="text-white flex  lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between ">
+      <div className="flex-1 ">
+        <div className="text-center md:mt-auto mt-10">
+          <h2 className="text-2xl font-bold">LOGIN</h2>
+          <p></p>
+        </div>
+
+        <form
+          onSubmit={handleLogin}
+          className="fieldset md:w-7/12 mx-auto max-w-[320px]"
+        >
+          <label className="input validator min-h-[52px] mb-4">
+            <svg
+              className="h-[1em] opacity-50 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </g>
+            </svg>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              type="email"
+              className="  text-black"
+              placeholder="Email"
+            />
+          </label>
+          <label className="input validator min-h-[52px]">
+            <svg
+              className="h-[1em] opacity-50 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path>
+                <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              </g>
+            </svg>
+
+            <input
+              name="password"
+              type="password"
+              className=" w-full text-black"
+              placeholder="Password"
+            />
+          </label>
           <div>
             <Link
               to="/forget-password"
@@ -90,17 +133,19 @@ const Login = () => {
             </Link>
           </div>
 
-          <button className="btn btn-neutral mt-4 w-full mb-2.5">Login</button>
+          <button className="btn btn-neutral bg-red-700 rounded-xl mt-4 w-5/12 mx-auto mb-2.5">
+            Login
+          </button>
 
           <button
             type="button"
             onClick={handleGoogleSignin}
-            className="btn bg-white text-black border-[#e5e5e5]"
+            className="btn bg-white rounded-xl min-h-[52px] text-black border-[#F0EDFF]"
           >
             <svg
               aria-label="Google logo"
-              width="16"
-              height="16"
+              width="32"
+              height="32"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
@@ -124,22 +169,20 @@ const Login = () => {
                 ></path>
               </g>
             </svg>
-            Login with Google
+            <h2 className="font-normal text-[12px]">
+              <span>Login with</span> <span className="font-bold">Google</span>
+            </h2>
           </button>
         </form>
-        <p className="pt-4">
+        <p className="pt-4 md:w-7/12 md:mb-auto mb-10 max-w-[320px]  mx-auto">
           New to our website? Please{" "}
           <Link className="text-blue-500 hover:text-blue-800 " to="/register">
             Register
           </Link>{" "}
         </p>
       </div>
-      <div className="lg:flex-1 md:flex-1 ">
-        <img
-          className="rounded-[40px] lg:flex md:flex hidden"
-          src={loginImg}
-          alt=""
-        />
+      <div className="lg:flex-1 md:flex-1 bg-red-600 p-10 lg:flex md:flex hidden">
+        <img className="rounded-[40px]  " src={loginImg} alt="" />
       </div>
     </div>
   );
