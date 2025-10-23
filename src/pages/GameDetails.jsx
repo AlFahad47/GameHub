@@ -15,7 +15,7 @@ const GameDetails = () => {
     setGame(filteredGame);
   }, []);
   return (
-    <div className="flex lg:flex-row flex-col-reverse  justify-between items-center w-11/12 mx-auto mt-10">
+    <div className="flex lg:flex-row flex-col-reverse  justify-between items-center w-11/12 mx-auto mt-10 text-white">
       <div className="flex-1 ">
         <h2 className="font-bold text-4xl mb-9">{game.title}</h2>
         <p className="mb-2.5">{game.description}</p>

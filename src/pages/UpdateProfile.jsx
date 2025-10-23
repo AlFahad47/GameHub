@@ -58,8 +58,8 @@ const UpdateProfile = () => {
             Update Information
           </button>
           <div>
-            <Link to="/login" className="link link-hover">
-              Back To Login
+            <Link to="/profile" className="link link-hover">
+              Back To Profile
             </Link>
           </div>
         </form>

@@ -97,14 +97,14 @@ const Register = () => {
       });
   };
   return (
-    <div className="flex flex-row-reverse m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
+    <div className="flex flex-row-reverse m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32 text-white">
       <div className="flex-1">
         <form onSubmit={handleSubmit} className="fieldset">
           <label className="label">Name</label>
           <input
             type="text"
             name="name"
-            className="input w-full"
+            className="input w-full text-black"
             placeholder="Name"
           />
 
@@ -112,7 +112,7 @@ const Register = () => {
           <input
             type="text"
             name="photo"
-            className="input w-full"
+            className="input w-full text-black"
             placeholder="Photo URL"
           />
 
@@ -120,14 +120,14 @@ const Register = () => {
           <input
             type="email"
             name="email"
-            className="input w-full"
+            className="input w-full text-black"
             placeholder="Email"
           />
           <label className="label">Password</label>
           <input
             type="password"
             name="password"
-            className="input w-full"
+            className="input w-full text-black"
             placeholder="Password"
           />
           <div>

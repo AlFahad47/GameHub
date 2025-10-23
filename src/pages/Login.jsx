@@ -62,7 +62,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
+    <div className="text-white flex m-10 lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between lg:gap-60 md:gap-32">
       <div className="flex-1">
         <form onSubmit={handleLogin} className="fieldset">
           <label className="label">Email</label>
@@ -70,14 +70,14 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             name="email"
             type="email"
-            className="input w-full"
+            className="input w-full text-black"
             placeholder="Email"
           />
           <label className="label">Password</label>
           <input
             name="password"
             type="password"
-            className="input w-full"
+            className="input w-full text-black"
             placeholder="Password"
           />
           <div>
@@ -127,12 +127,9 @@ const Login = () => {
             Login with Google
           </button>
         </form>
-        <p>
+        <p className="pt-4">
           New to our website? Please{" "}
-          <Link
-            className="text-blue-500 hover:text-blue-800 pt-10"
-            to="/register"
-          >
+          <Link className="text-blue-500 hover:text-blue-800 " to="/register">
             Register
           </Link>{" "}
         </p>
