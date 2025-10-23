@@ -10,11 +10,11 @@ const GameCard = ({ game }) => {
         variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1 }}
-        className="w-[340px]  max-h-[550px] bg-[#AD2B2B] rounded-md flex flex-col justify-between cursor-pointer "
+        className="lg:w-[340px] md:w-[320px] w-[260px] max-h-[550px] bg-[#AD2B2B] rounded-md flex flex-col justify-between cursor-pointer "
       >
         <div>
           <img
-            className="rounded-t-md h-[420px] object-cover w-full"
+            className="rounded-t-md lg:h-[420px] md:h-[360px] h-[280px] object-cover w-full"
             src={game.coverPhoto}
             alt=""
           />
