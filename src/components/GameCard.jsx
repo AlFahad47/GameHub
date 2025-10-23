@@ -7,6 +7,7 @@ const GameCard = ({ game }) => {
   return (
     <Link to={`/game/${game.id}`}>
       <motion.div
+        variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1 }}
         className="w-[340px]  max-h-[550px] bg-[#AD2B2B] rounded-md flex flex-col justify-between cursor-pointer "

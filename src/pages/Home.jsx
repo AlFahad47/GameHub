@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import GameCard from "../components/GameCard";
 import gameLogo from "../assets/gamelogo.png";
 import { useTitle } from "../hooks/useTitle";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const data = useLoaderData();
@@ -13,14 +14,27 @@ const Home = () => {
       <h2 className="mt-10 font-bold text-xl md:text-2xl lg:text-4xl text-center">
         Popular Games
       </h2>
-      <div className="flex flex-wrap lg:gap-8 md:gap-3 gap-2 justify-center mt-3 lg:mt-5 w-11/12 mx-auto">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        initial="hidden"
+        animate="show"
+        className="flex flex-wrap lg:gap-8 md:gap-3 gap-2 justify-center mt-3 lg:mt-5 w-11/12 mx-auto"
+      >
         {data
           .sort((a, b) => parseFloat(b.ratings) - parseFloat(a.ratings))
           .slice(0, 3)
           .map((game) => (
             <GameCard key={game.id} game={game}></GameCard>
           ))}
-      </div>
+      </motion.div>
       {/* new letter section */}
       <div className=" ">
         <div className="flex lg:flex-row flex-col justify-between items-center lg:w-9/12 w-11/12 mx-auto mt-10 bg-[#8E1616] p-10 rounded-2xl relative z-10 -mb-56   border-white/30 border-3 shadow-lg lg:px-30">
