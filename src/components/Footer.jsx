@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="bg-[#0B0B0B] text-white">
-      <div className="flex mx-20 justify-between pt-10 mt-10">
+      <div className="flex mx-20 justify-between pt-10 ">
         <p>contact</p>
 
         <h2>Subscribe</h2>

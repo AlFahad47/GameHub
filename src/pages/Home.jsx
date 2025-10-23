@@ -22,21 +22,38 @@ const Home = () => {
           ))}
       </div>
       {/* new letter section */}
-      <div className="flex lg:flex-row flex-col justify-between items-center lg:w-9/12 w-11/12 mx-auto mt-10">
-        <img
-          className="lg:max-h-[550px] md:max-h-[400px] max-h-[250px] mb-5"
-          src={gameLogo}
-          alt=""
-        />
-        <div className="">
-          <h2 className="font-bold text-3xl mb-2">Sign up for newletter</h2>
-          <p>Join our mailing list to get quick updates...</p>
-          <form className="flex gap-3 mt-10 " action="">
-            <input className="input" type="text" />
-            <button className="btn btn-primary bg-red-500">Subscribe</button>
-          </form>
+      <div className=" ">
+        <div className="flex lg:flex-row flex-col justify-between items-center lg:w-9/12 w-11/12 mx-auto mt-10 bg-[#8E1616] p-10 rounded-2xl relative z-10 -mb-56   border-white/30 border-3 shadow-lg lg:px-30">
+          <img
+            className="lg:max-h-[350px] md:max-h-[300px] max-h-[250px] mb-5"
+            src={gameLogo}
+            alt=""
+          />
+          <div className=" text-white/80">
+            <h2 className="font-bold lg:text-3xl md:text-3xl text-xl mb-2">
+              Subscribe for Newsletter
+            </h2>
+            <p className="text-[14px] lg:text-xl md:text-xl">
+              Join our mailing list to get quick updates...
+            </p>
+            <form
+              className="flex gap-3 mt-10 "
+              action=""
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <input
+                className="input text-black"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <button className="bg-red-700 text-white px-4 py-2 rounded-md font-semibold cursor-pointer">
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
       </div>
+      <div className="bg-[#0B0B0B] min-h-56"></div>
     </div>
   );
 };
