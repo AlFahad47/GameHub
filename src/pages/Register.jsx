@@ -77,7 +77,7 @@ const Register = () => {
       })
       .catch((e) => {
         console.log(e.message);
-        console.log(e.message);
+        toast.error(e.message);
       });
   };
 
@@ -106,6 +106,7 @@ const Register = () => {
             name="name"
             className="input w-full text-black"
             placeholder="Name"
+            required
           />
 
           <label className="label">Photo</label>
@@ -114,6 +115,7 @@ const Register = () => {
             name="photo"
             className="input w-full text-black"
             placeholder="Photo URL"
+            required
           />
 
           <label className="label">Email</label>
