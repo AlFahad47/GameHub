@@ -26,7 +26,7 @@ const MyProfile = () => {
           </div>
           <img
             src={user?.photoURL}
-            className="rounded-full  h-48 w-40 border-6 border-amber-50"
+            className="rounded-full  h-48 w-auto border-6 border-amber-50"
             alt=""
           />
         </div>

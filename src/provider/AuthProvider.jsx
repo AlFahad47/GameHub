@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import { auth } from "../firebase/firebase.config";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
 
   console.log(auth);
 
@@ -16,12 +25,17 @@ const AuthProvider = ({ children }) => {
   };
 
   const updateProfileFunc = (displayName, photoURL) => {
-    return updateProfile(auth.currentUser, {
-      displayName,
-      photoURL,
-    });
+    const updates = {};
+    if (displayName?.trim()) {
+      updates.displayName = displayName.trim();
+    }
+
+    if (photoURL?.trim()) {
+      updates.photoURL = photoURL.trim();
+    }
+    return updateProfile(auth.currentUser, updates);
   };
- const sendEmailVerificationFunc = () => {
+  const sendEmailVerificationFunc = () => {
     setLoading(true);
     return sendEmailVerification(auth.currentUser);
   };
@@ -35,13 +49,13 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-   const signInWithGoogleFunc = () => {
+  const signInWithGoogleFunc = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
-   const sendPassResetEmailFunc = (email) => {
-    console.log("email from auth forget pass word",email)
+  const sendPassResetEmailFunc = (email) => {
+    console.log("email from auth forget pass word", email);
     setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
@@ -56,13 +70,10 @@ const AuthProvider = ({ children }) => {
     signoutUserFunc,
     signInWithEmailAndPasswordFunc,
     signInWithGoogleFunc,
-    sendPassResetEmailFunc
+    sendPassResetEmailFunc,
   };
 
-
-
-
-    useEffect(() => {
+  useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currUser) => {
       console.log(currUser);
       setUser(currUser);
@@ -73,8 +84,6 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-
-
 
   return <AuthContext value={authInfo}>{children}</AuthContext>;
 };
