@@ -199,19 +199,19 @@ const Register = () => {
             />
           </label>
 
-          <button className="btn btn-neutral mt-4 w-full mb-2.5">
+          <button className="btn btn-neutral bg-red-600 mt-4 min-h-12 w-full mb-2.5">
             Register
           </button>
 
           <button
             onClick={handleGoogleSignin}
             type="button"
-            className="btn bg-white text-black border-[#e5e5e5]"
+            className="btn bg-white rounded-sm min-h-12 text-black border-[#F0EDFF]"
           >
             <svg
               aria-label="Google logo"
-              width="16"
-              height="16"
+              width="32"
+              height="32"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >

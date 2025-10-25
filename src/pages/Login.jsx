@@ -132,14 +132,14 @@ const Login = () => {
             </Link>
           </div>
 
-          <button className="btn btn-neutral bg-red-700 rounded-xl mt-4 w-5/12 mx-auto mb-2.5">
+          <button className="btn btn-neutral bg-red-600 mt-4 min-h-12 w-full mb-2.5">
             Login
           </button>
 
           <button
             type="button"
             onClick={handleGoogleSignin}
-            className="btn bg-white rounded-xl min-h-[52px] text-black border-[#F0EDFF]"
+            className="btn bg-white rounded-sm min-h-12 text-black border-[#F0EDFF]"
           >
             <svg
               aria-label="Google logo"
