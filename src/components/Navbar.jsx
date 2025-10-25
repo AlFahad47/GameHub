@@ -4,6 +4,7 @@ import logoImg from "../assets/logo.png";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import avaterImg from "../assets/avater.png";
+import { PacmanLoader, PuffLoader, PulseLoader } from "react-spinners";
 const Navbar = () => {
   const { user, setUser, loading, setLoading, signoutUserFunc } =
     use(AuthContext);
@@ -29,10 +30,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/all">All Games</NavLink>
       </li>
-      {!user && (
+      {loading ? (
         <li>
-          <NavLink to="/register">Register</NavLink>
+          <PuffLoader size={30} />
         </li>
+      ) : (
+        !user && (
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        )
       )}
     </>
   );
@@ -84,7 +91,9 @@ const Navbar = () => {
 
       <div className="navbar-end">
         <ul className="menu menu-horizontal px-1 hidden lg:flex">{navLinks}</ul>
-        {user ? (
+        {loading ? (
+          <PulseLoader />
+        ) : user ? (
           <div className="flex justify-between items-center text-center gap-4">
             <Link to="/profile">
               <img
