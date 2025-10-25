@@ -1,16 +1,45 @@
-# React + Vite
+# GameHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Purpose
 
-Currently, two official plugins are available:
+GameHub is an engaging online library designed for discovering and supporting indie game developers. Users can browse a curated selection of indie games, view detailed information, and download games they enjoy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
 
-## React Compiler
+[https://game-hub-new.netlify.app/](https://game-hub-new.netlify.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+- **Firebase Authentication:** Secure user registration and login using email/password and Google social login.
+- **Protected Routes:** The Game Details page is protected, ensuring only logged-in users can access it.
+- **Dynamic Homepage:** Features an interactive banner slider and a "Popular Games" section sorted by rating.
+- **User Profile Management:** Logged-in users can view their profile and update their name and photo URL.
+- **Password Reset:** A functional "Forget Password" feature to help users regain access to their accounts.
+- **Fully Responsive Design:** The layout is optimized for a seamless experience on mobile, tablet, and desktop devices.
+- **Custom 404 Page:** A user-friendly "Not Found" page for handling invalid routes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technology Stack & Packages
+
+This project was built using the following technologies and npm packages:
+
+### Core Dependencies
+
+- **React:** `react`, `react-dom`
+- **Routing:** `react-router`
+- **Authentication & Database:** `firebase`
+- **Styling:** `tailwindcss`
+- **UI Components (Tailwind):** `daisyui`
+- **Animation:** `framer-motion`
+- **UI Components:**
+  - `react-slick` & `slick-carousel` (for the banner slider)
+  - `react-spinners` (for loading indicators)
+  - `react-toastify` (for user notifications)
+
+### Development & Build Tools
+
+- **Bundler:** `vite`
+- **Vite Plugins:** `@vitejs/plugin-react`
+- **Tailwind Vite Plugin:** `@tailwindcss/vite`
+- **Linting:** `eslint`, `@eslint/js`, `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`
+- **Types:** `@types/react`, `@types/react-dom`
+- **Utilities:** `globals`
