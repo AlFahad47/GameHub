@@ -7,7 +7,6 @@ import GameDetails from "../pages/GameDetails";
 import AllGames from "../pages/AllGames";
 import MyProfile from "../pages/MyProfile";
 import UpdateProfile from "../pages/UpdateProfile";
-import About from "../pages/About";
 import ForgetPassword from "../pages/ForgetPassword";
 import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./PrivateRoute";
@@ -38,7 +37,6 @@ export const router = createBrowserRouter([
       },
       { path: "/profile", element: <MyProfile /> },
       { path: "/update", element: <UpdateProfile /> },
-      { path: "/about", element: <About /> },
       { path: "/forget-password", element: <ForgetPassword /> },
     ],
   },

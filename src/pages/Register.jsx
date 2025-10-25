@@ -208,9 +208,6 @@ const Register = () => {
               placeholder="Password"
             />
           </label>
-          <div>
-            <a className="link link-hover">Forgot password?</a>
-          </div>
 
           <button className="btn btn-neutral mt-4 w-full mb-2.5">
             Register
