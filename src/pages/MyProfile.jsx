@@ -2,11 +2,16 @@ import React, { useContext } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import { useTitle } from "../hooks/useTitle";
+import Loading from "./Loading";
 
 const MyProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   console.log(user);
   useTitle("My Profile | GameHub");
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="flex justify-center items-center    min-h-screen ">
       <div className="fieldset  md:px-20 md:py-10  md:w-auto w-10/12 bg-white/90 rounded-2xl">
