@@ -6,7 +6,7 @@ import Loading from "./Loading";
 
 const MyProfile = () => {
   const { user, loading } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   useTitle("My Profile | GameHub");
 
   if (loading) {

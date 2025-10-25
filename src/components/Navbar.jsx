@@ -20,7 +20,7 @@ const Navbar = () => {
       });
   };
 
-  console.log(loading);
+  // console.log(loading);
 
   const navLinks = (
     <>

@@ -7,7 +7,7 @@ import { useTitle } from "../hooks/useTitle";
 const ForgetPassword = () => {
   const { sendPassResetEmailFunc, setLoading } = useContext(AuthContext);
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const [email, setEmail] = useState(location?.state || "");
 
   useTitle("Password Reset | GameHub");

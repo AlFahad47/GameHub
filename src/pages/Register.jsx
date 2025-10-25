@@ -28,13 +28,6 @@ const Register = () => {
     const email = e.target.email?.value;
     const password = e.target.password?.value;
 
-    console.log("signup function entered", {
-      email,
-      displayName,
-      photoURL,
-      password,
-    });
-
     const regExp = /(?=.*[A-Z])(?=.*[a-z]).{6,}/;
 
     if (!regExp.test(password)) {
@@ -49,11 +42,11 @@ const Register = () => {
         // 2nd step: Update profile
         updateProfileFunc(displayName, photoURL)
           .then(() => {
-            console.log(res);
+            // console.log(res);
             // 3rd step: Email verification
             sendEmailVerificationFunc()
               .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setLoading(false);
 
                 // Signout user
@@ -66,17 +59,14 @@ const Register = () => {
                 });
               })
               .catch((e) => {
-                console.log(e.message);
                 toast.error(e.message);
               });
           })
           .catch((e) => {
-            console.log(e.message);
             toast.error(e.message);
           });
       })
       .catch((e) => {
-        console.log(e.message);
         toast.error(e.message);
       });
   };

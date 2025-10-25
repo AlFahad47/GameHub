@@ -18,8 +18,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log(auth);
-
   const createUserWithEmailAndPasswordFunc = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -55,7 +53,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const sendPassResetEmailFunc = (email) => {
-    console.log("email from auth forget pass word", email);
     setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
@@ -75,7 +72,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currUser) => {
-      console.log(currUser);
+      // console.log(currUser);
       setUser(currUser);
       setLoading(false);
     });

@@ -14,21 +14,21 @@ const UpdateProfile = () => {
     e.preventDefault();
     updateProfileFunc(displayName, photoURL)
       .then((res) => {
-        console.log("before", user);
-        console.log("after", res);
+        // console.log("before", user);
+        // console.log("after", res);
         setUser((prev) => ({
           ...prev,
           displayName: displayName?.trim() ? displayName : prev.displayName,
           photoURL: photoURL?.trim() ? photoURL : prev.photoURL,
         }));
-        console.log("after", user);
+        // console.log("after", user);
 
         toast.success("Update successful");
         navigate("/profile");
       })
       .catch((e) => {
         toast.error(e.message);
-        console.log(e);
+        // console.log(e);
       });
   };
   return (
