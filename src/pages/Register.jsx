@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import loginImg from "../assets/login.png";
+import loginImg from "../assets/regChar.png";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import { useTitle } from "../hooks/useTitle";
@@ -87,7 +87,7 @@ const Register = () => {
       });
   };
   return (
-    <div className="text-white flex  lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between  ">
+    <div className="text-white flex   mx-auto items-center justify-between  ">
       <div className="flex-1">
         <div className="text-center md:mt-auto mt-10">
           <h2 className="text-2xl font-bold">REGISTRATION</h2>
@@ -95,7 +95,7 @@ const Register = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="fieldset md:w-7/12 mx-auto max-w-[320px]"
+          className="fieldset lg:w-7/12 md:11/12 mx-auto max-w-[320px]"
         >
           <label className="input validator min-h-[52px] mb-4">
             <svg
@@ -248,8 +248,8 @@ const Register = () => {
           </Link>
         </p>
       </div>
-      <div className="lg:flex-1 md:flex-1 bg-red-600 p-10 md:py-30 lg:py-10 lg:flex md:flex hidden">
-        <img className="rounded-[40px]  " src={loginImg} alt="" />
+      <div className="lg:flex-1 md:flex-1 bg-red-600 p-10 md:py-30 lg:py-10 lg:flex md:flex hidden justify-center items-center">
+        <img className="rounded-[40px] h-[670px]  " src={loginImg} alt="" />
       </div>
     </div>
   );

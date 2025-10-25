@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import loginImg from "../assets/login.png";
+import loginImg from "../assets/regChar.png";
 import { Link, Links, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { AuthContext } from "../provider/AuthContext";
@@ -61,7 +61,7 @@ const Login = () => {
   };
 
   return (
-    <div className="text-white flex  lg:w-11/12 md:w-11/12 w-10/12  mx-auto items-center justify-between ">
+    <div className="text-white flex    mx-auto items-center justify-between mr-0 ">
       <div className="flex-1 ">
         <div className="text-center md:mt-auto mt-10">
           <h2 className="text-2xl font-bold">LOGIN</h2>
@@ -70,7 +70,7 @@ const Login = () => {
 
         <form
           onSubmit={handleLogin}
-          className="fieldset md:w-7/12 mx-auto max-w-[320px]"
+          className="fieldset lg:w-7/12 md:11/12 mx-auto max-w-[320px]"
         >
           <label className="input validator min-h-[52px] mb-4">
             <svg
@@ -180,8 +180,8 @@ const Login = () => {
           </Link>{" "}
         </p>
       </div>
-      <div className="lg:flex-1 md:flex-1 bg-red-600 p-10 lg:flex md:flex hidden">
-        <img className="rounded-[40px]  " src={loginImg} alt="" />
+      <div className="lg:flex-1 md:flex-1 justify-center items-center bg-red-600 p-10  lg:flex md:flex hidden">
+        <img className="rounded-[40px] h-[670px]  " src={loginImg} alt="" />
       </div>
     </div>
   );
