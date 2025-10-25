@@ -244,7 +244,7 @@ const Register = () => {
             to="/login"
             className="text-pink-300 hover:text-white font-medium underline"
           >
-            Sign in
+            Login
           </Link>
         </p>
       </div>
