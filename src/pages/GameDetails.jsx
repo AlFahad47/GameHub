@@ -43,7 +43,11 @@ const GameDetails = () => {
         </div>
       </div>
       <div className="flex-1 flex justify-end">
-        <img className="h-96 rounded-xl mb-5" src={game.coverPhoto} alt="" />
+        <img
+          className="md:h-96 h-80 rounded-xl mb-5"
+          src={game.coverPhoto}
+          alt=""
+        />
       </div>
     </div>
   );
