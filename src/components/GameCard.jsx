@@ -4,13 +4,18 @@ import ratingImg from "../assets/star.png";
 import { motion } from "framer-motion";
 
 const GameCard = ({ game }) => {
+  function shortDes(text) {
+    if (typeof text !== "string") return "";
+    const cleaned = text.replace(/\s+/g, " ").trim();
+    return cleaned.length > 70 ? cleaned.slice(0, 70) + "..." : cleaned;
+  }
   return (
-    <Link to={`/game/${game.id}`}>
+    <div>
       <motion.div
         variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1 }}
-        className="lg:w-[340px] md:w-[320px] w-[260px] max-h-[550px] bg-[#AD2B2B] rounded-md flex flex-col justify-between cursor-pointer "
+        className="lg:w-[340px] md:w-[320px] w-[260px] max-h-[650px] bg-[#DC2626] rounded-md flex flex-col justify-between  "
       >
         <div>
           <img
@@ -18,16 +23,27 @@ const GameCard = ({ game }) => {
             src={game.coverPhoto}
             alt=""
           />
-          <div className="pl-2 lg:pl-4 pb-2 lg:pb-4">
-            <h2 className="text-white font-medium mt-2.5">{game.title}</h2>
-            <div className="flex py-1.5  gap-2  items-center">
-              <img src={ratingImg} className="w-4 h-4" alt="" />
-              <p className="">{game.ratings}</p>
+          <h2 className="text-white font-medium mt-2.5 mx-auto w-11/12 ">
+            {game.title}
+          </h2>
+          <h2 className="text-gray-300 font-normal mt-2.5 mx-auto w-11/12 ">
+            {shortDes(game.description)}
+          </h2>
+
+          <div className="flex justify-between mx-auto w-11/12  items-center py-2.5">
+            <div className="pl-2  pb-2 lg:pb-4">
+              <div className="flex py-1.5  gap-2  items-center">
+                <img src={ratingImg} className="w-4 h-4" alt="" />
+                <p className="">{game.ratings}</p>
+              </div>
             </div>
+            <Link to={`/game/${game.id}`} className="btn btn-primary">
+              View Details
+            </Link>
           </div>
         </div>
       </motion.div>
-    </Link>
+    </div>
   );
 };
 

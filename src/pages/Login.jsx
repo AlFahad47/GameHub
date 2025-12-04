@@ -74,7 +74,7 @@ const Login = () => {
         >
           <label className="input validator min-h-[52px] mb-4">
             <svg
-              className="h-[1em] opacity-50 text-black"
+              className="h-[1em] opacity-50 text-primary-content"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -93,13 +93,13 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               name="email"
               type="email"
-              className="  text-black"
+              className="  text-primary-content"
               placeholder="Email"
             />
           </label>
           <label className="input validator min-h-[52px]">
             <svg
-              className="h-[1em] opacity-50 text-black"
+              className="h-[1em] opacity-50 text-primary-content"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -118,7 +118,7 @@ const Login = () => {
             <input
               name="password"
               type="password"
-              className=" w-full text-black"
+              className=" w-full text-primary-content"
               placeholder="Password"
             />
           </label>
@@ -139,9 +139,10 @@ const Login = () => {
           <button
             type="button"
             onClick={handleGoogleSignin}
-            className="btn bg-white rounded-sm min-h-12 text-black border-[#F0EDFF]"
+            className="btn bg-primary rounded-sm min-h-12 text-primary-content border-[#F0EDFF]"
           >
             <svg
+              className="rounded-full"
               aria-label="Google logo"
               width="32"
               height="32"
@@ -173,7 +174,7 @@ const Login = () => {
             </h2>
           </button>
         </form>
-        <p className="pt-4 md:w-7/12 md:mb-auto mb-10 max-w-[320px]  mx-auto">
+        <p className="pt-4 md:w-7/12 md:mb-auto mb-10 max-w-[320px]  mx-auto text-primary-content">
           New to our website? Please{" "}
           <Link className="text-blue-500 hover:text-blue-800 " to="/register">
             Register

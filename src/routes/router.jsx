@@ -11,6 +11,8 @@ import ForgetPassword from "../pages/ForgetPassword";
 import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./PrivateRoute";
 import AppNotFound from "../pages/APPNotFound";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -22,11 +24,7 @@ export const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       {
         path: "/game/:id",
-        element: (
-          <PrivateRoute>
-            <GameDetails />
-          </PrivateRoute>
-        ),
+        element: <GameDetails />,
         loader: () => fetch("/games.json"),
         errorElement: <AppNotFound />,
       },
@@ -38,6 +36,8 @@ export const router = createBrowserRouter([
       { path: "/profile", element: <MyProfile /> },
       { path: "/update", element: <UpdateProfile /> },
       { path: "/forget-password", element: <ForgetPassword /> },
+      { path: "/about", element: <About /> },
+      { path: "/contact", element: <Contact /> },
     ],
   },
 

@@ -99,7 +99,7 @@ const Register = () => {
         >
           <label className="input validator min-h-[52px] mb-4">
             <svg
-              className="h-[1em] opacity-50 text-black"
+              className="h-[1em] opacity-50 text-primary-content"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -117,14 +117,14 @@ const Register = () => {
             <input
               name="name"
               type="text"
-              className="  text-black"
+              className="  text-primary-content"
               placeholder="Name"
             />
           </label>
 
           <label className="input validator min-h-[52px] mb-4">
             <svg
-              className="h-[1em] opacity-50 text-black"
+              className="h-[1em] opacity-50 text-primary-content"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -144,14 +144,14 @@ const Register = () => {
               required
               name="photo"
               placeholder="Photo URL"
-              className="  text-black"
+              className="  text-primary-content"
               title="Must be valid URL"
             />
           </label>
 
           <label className="input validator min-h-[52px] mb-4">
             <svg
-              className="h-[1em] opacity-50 text-black"
+              className="h-[1em] opacity-50 text-primary-content"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -169,13 +169,13 @@ const Register = () => {
             <input
               name="email"
               type="email"
-              className="  text-black"
+              className="  text-primary-content"
               placeholder="Email"
             />
           </label>
           <label className="input validator min-h-[52px]">
             <svg
-              className="h-[1em] opacity-50 text-black"
+              className="h-[1em] opacity-50 text-primary-content"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -194,7 +194,7 @@ const Register = () => {
             <input
               name="password"
               type="password"
-              className=" w-full text-black"
+              className=" w-full text-primary-content"
               placeholder="Password"
             />
           </label>
@@ -206,9 +206,10 @@ const Register = () => {
           <button
             onClick={handleGoogleSignin}
             type="button"
-            className="btn bg-white rounded-sm min-h-12 text-black border-[#F0EDFF]"
+            className="btn bg-primary rounded-sm min-h-12 text-primary-content border-[#F0EDFF]"
           >
             <svg
+              className="rounded-full"
               aria-label="Google logo"
               width="32"
               height="32"
@@ -238,7 +239,7 @@ const Register = () => {
             Login with Google
           </button>
         </form>
-        <p className="pt-4 md:w-7/12 md:mb-auto mb-10 max-w-[320px]  mx-auto">
+        <p className="pt-4 md:w-7/12 md:mb-auto mb-10 max-w-[320px]  mx-auto text-primary-content">
           Already have an account?{" "}
           <Link
             to="/login"

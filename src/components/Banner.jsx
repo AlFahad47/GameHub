@@ -24,7 +24,7 @@ const Banner = () => {
   };
 
   return (
-    <div className=" lg:w-full w-11/12 mx-auto lg:h-[290px]  md:h-60 h-[115px] max-w-5xl mt-8 rounded-2xl overflow-hidden shadow-lg">
+    <div className=" lg:w-full w-11/12 mx-auto lg:h-[290px]  md:h-60 h-[115px] max-w-[1090px] mt-10 rounded-2xl overflow-hidden shadow-lg">
       <Slider {...settings}>
         {slides.map((slide) => (
           <div key={slide.id} className="relative">

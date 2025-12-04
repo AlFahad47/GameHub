@@ -1,14 +1,31 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import logoImg from "../assets/logo.png";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import avaterImg from "../assets/avater.png";
 import { PacmanLoader, PuffLoader, PulseLoader } from "react-spinners";
+import { IoIosMoon } from "react-icons/io";
+import { FaSun } from "react-icons/fa";
 const Navbar = () => {
   const { user, setUser, loading, setLoading, signoutUserFunc } =
     use(AuthContext);
 
+  // 1. Set the default theme (e.g., "light", "dark", "cupcake", "synthwave")
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
+
+  // 2. Automatically update the HTML tag whenever the state changes
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // 3. Toggle function
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
   const handleSignout = () => {
     signoutUserFunc()
       .then(() => {
@@ -30,6 +47,18 @@ const Navbar = () => {
       <li>
         <NavLink to="/all">All Games</NavLink>
       </li>
+      <li>
+        <NavLink to="/about">About Us</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact Us</NavLink>
+      </li>
+      <li className="ml-5 flex justify-center items-center">
+        {/*  toggle theme  */}
+        <button onClick={toggleTheme} className="btn btn-ghost btn-circle">
+          {theme === "light" ? <FaSun size={20} /> : <IoIosMoon size={20} />}
+        </button>
+      </li>
       {loading ? (
         <li>
           <PuffLoader size={30} />
@@ -45,7 +74,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar  shadow-sm bg-[#262626] text-white">
+    <div className="navbar sticky top-0 z-10 shadow-sm bg-primary text-primary-content  md:px-20">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -85,7 +114,7 @@ const Navbar = () => {
             className="mr-1 lg:mr-2 md:mr-2  "
             src={logoImg}
             alt=""
-          /> Game <span className="text-[#EE0001]">Hub</span>{" "}
+          /> Game <span className="text-[#DC2626]">Hub</span>{" "}
         </NavLink>
       </div>
 
