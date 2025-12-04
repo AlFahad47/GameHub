@@ -37,14 +37,14 @@ const UpdateProfile = () => {
         {" "}
         <form
           onSubmit={handleUpadte}
-          className="fieldset  px-20 py-10 w-[470px] bg-red-200 rounded-2xl"
+          className="fieldset  px-20 py-10 w-[470px] bg-white shadow-2xl text-black rounded-2xl"
         >
           <label className="label">Name</label>
           <input
             name="name"
             onChange={(e) => setDisplayName(e.target.value)}
             type="text"
-            className="input w-full"
+            className="input w-full text-primary-content"
             placeholder="Name"
           />
 
@@ -53,7 +53,7 @@ const UpdateProfile = () => {
             name="photo"
             onChange={(e) => setPhotoURL(e.target.value)}
             type="text"
-            className="input w-full"
+            className="input w-full text-primary-content"
             placeholder="photo URL"
           />
           <button className="btn btn-neutral bg-red-600 mt-4 w-full mb-2.5">

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Navigate } from "react-router";
 import ratingImg from "../assets/star.png";
 import { motion } from "framer-motion";
+import { IoIosStar } from "react-icons/io";
 
 const GameCard = ({ game }) => {
   function shortDes(text) {
@@ -33,11 +34,11 @@ const GameCard = ({ game }) => {
           <div className="flex justify-between mx-auto w-11/12  items-center py-2.5">
             <div className="pl-2  pb-2 lg:pb-4">
               <div className="flex py-1.5  gap-2  items-center">
-                <img src={ratingImg} className="w-4 h-4" alt="" />
-                <p className="">{game.ratings}</p>
+                <IoIosStar className=" text-white" alt="" />
+                <p className="text-white">{game.ratings}</p>
               </div>
             </div>
-            <Link to={`/game/${game.id}`} className="btn btn-primary">
+            <Link to={`/game/${game.id}`} className="btn btn-dash text-white">
               View Details
             </Link>
           </div>

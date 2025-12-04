@@ -14,7 +14,7 @@ const MyProfile = () => {
   }
   return (
     <div className="flex justify-center items-center    min-h-screen ">
-      <div className="fieldset  md:px-20 md:py-10  md:w-auto w-10/12 bg-white/90 rounded-2xl">
+      <div className="fieldset  md:px-20 md:py-10  md:w-auto w-10/12 bg-white shadow-2xl  rounded-xl">
         <h2 className="text-white/80 text-center text-3xl font-bold bg-red-600 p-2 rounded-sm w-10/12 mt-5 mx-auto border-black mb-5">
           My profile
         </h2>
@@ -22,11 +22,11 @@ const MyProfile = () => {
           <div className="">
             <div className=" font-bold text-xl mb-3.5">
               <p className="text-sm text-black/50">Full Name: </p>
-              <h2 className="">{user?.displayName}</h2>
+              <h2 className="text-black">{user?.displayName}</h2>
             </div>
             <div className=" font-bold text-xl">
               <p className="text-sm text-black/50">Email Address: </p>
-              <h2>{user?.email}</h2>
+              <h2 className="text-black">{user?.email}</h2>
             </div>
           </div>
           <img
@@ -43,7 +43,7 @@ const MyProfile = () => {
           Update
         </Link>
         <div>
-          <Link to="/" className="link link-hover ">
+          <Link to="/" className="link link-hover text-black ">
             Back To Home
           </Link>
         </div>

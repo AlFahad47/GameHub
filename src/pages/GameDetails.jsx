@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { useTitle } from "../hooks/useTitle";
+import { IoIosStar } from "react-icons/io";
 
 const GameDetails = () => {
   const { id } = useParams();
@@ -15,10 +16,10 @@ const GameDetails = () => {
     setGame(filteredGame);
   }, []);
   return (
-    <div className="flex lg:flex-row flex-col-reverse lg:my-30 justify-between items-center w-11/12 mx-auto mt-10 text-white">
+    <div className="flex lg:flex-row flex-col-reverse lg:my-30 justify-between items-center w-11/12 mx-auto mt-10 text-primary-content">
       <div className="flex-1 ">
         <h2 className="font-bold text-4xl mb-7">{game.title}</h2>
-        <hr class=" border-white my-5" />
+        <hr class=" border-primary-content my-5" />
 
         <p className="mb-2.5">{game.description}</p>
 
@@ -29,11 +30,14 @@ const GameDetails = () => {
               {game.developer}
             </span>
           </h2>
-          <hr class=" border-white my-5" />
+          <hr class=" border-primary-content my-5" />
           <p>Category: {game.category}</p>
         </div>
         <div className="flex items-center justify-between mb-5">
-          <h2>{game.ratings}</h2>
+          <div className="flex py-1.5  gap-2  items-center">
+            <IoIosStar className=" text-primary-content" alt="" />
+            <p className="text-primary-content">{game.ratings}</p>
+          </div>
           <a
             href={game.downloadLink}
             className="bg-red-700 text-white px-4 py-2 rounded-md font-semibold cursor-pointer"
